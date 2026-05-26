@@ -1,6 +1,8 @@
 #' @title readGLPS
-#' @description Reads Global Livestock Production System (GLPS) data for
-#'   reference year 2010. Three animal groups are available:
+#' @description Reads Global Livestock Production System (GLPS) data.
+#'   Chicken and pig subtypes are for reference year 2010; the ruminant
+#'   subtype (Ruminant_2000) is for reference year ca. 2000.
+#'   Three animal groups are available:
 #'   \itemize{
 #'     \item Chickens: backyard (extensive) and intensive management –
 #'       continuous density raster (heads/pixel)
@@ -9,7 +11,7 @@
 #'     \item Ruminants: categorical production system map (LPS class code
 #'       per pixel; aggregated to 0.5 degree by modal value)
 #'   }
-#' @param subtype Animal group and management system for 2010. Available
+#' @param subtype Animal group and management system. Available
 #'   options:
 #'   \itemize{
 #'     \item Chicken – \code{Ch_Ext_2010} (backyard/extensive),

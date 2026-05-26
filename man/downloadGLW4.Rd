@@ -31,8 +31,6 @@ Downloads Gridded Livestock of the World version 4 (GLW 4)
   raster data for reference years 2015 (Harvard Dataverse) and 2020
   (FAO GIS Manager). Eight livestock species are available for 2015
   (dasymetric and areal weighting); six species for 2020 (dasymetric only).
-  Files are stored under species subdirectories matching the layout expected
-  by \code{readGLW4}.
   Source catalogues:
   https://dataverse.harvard.edu/dataverse/glw_4
   https://data.apps.fao.org/catalog/iso/9d1e149b-d63f-4213-978b-317a8eb42d02

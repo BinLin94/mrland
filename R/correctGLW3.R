@@ -11,9 +11,7 @@
 #' }
 #' @importFrom madrat toolConditionalReplace
 
-correctGLW3<- function(x){
-  
-  x <- toolConditionalReplace(x, conditions = c("is.na()","<0"), replaceby = 0)
-  
+correctGLW3 <- function(x) {
+  x <- toolConditionalReplace(x, conditions = c("is.na()", "<0"), replaceby = 0)
   return(x)
 }

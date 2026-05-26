@@ -7,7 +7,7 @@
 readGLPS(subtype = "Ch_Ext_2010")
 }
 \arguments{
-\item{subtype}{Animal group and management system for 2010. Available
+\item{subtype}{Animal group and management system. Available
 options:
 \itemize{
   \item Chicken – \code{Ch_Ext_2010} (backyard/extensive),
@@ -23,8 +23,10 @@ A gridded magpie object. Monogastric subtypes: heads/pixel.
   Ruminant_2000: categorical LPS class code per pixel.
 }
 \description{
-Reads Global Livestock Production System (GLPS) data for
-  reference year 2010. Three animal groups are available:
+Reads Global Livestock Production System (GLPS) data.
+  Chicken and pig subtypes are for reference year 2010; the ruminant
+  subtype (Ruminant_2000) is for reference year ca. 2000.
+  Three animal groups are available:
   \itemize{
     \item Chickens: backyard (extensive) and intensive management –
       continuous density raster (heads/pixel)
