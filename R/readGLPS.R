@@ -21,17 +21,18 @@
 #'       \code{Pg_Ind_2010} (industrial/intensive)
 #'     \item Ruminant – \code{Ruminant_2000} (categorical LPS raster ca. 2000)
 #'   }
-#' @return A gridded magpie object. Monogastric subtypes: heads/pixel.
-#'   Ruminant_2000: categorical LPS class code per pixel.
+#' @return A magpie object with 67420 lpjcell coordinates. Monogastric subtypes:
+#'   heads/pixel. Ruminant_2000: categorical LPS class code per pixel.
 #' @author Bin Lin
 #' @examples
 #' \dontrun{
 #' readSource("GLPS", subtype = "Ch_Ext_2010", convert = FALSE)
 #' readSource("GLPS", subtype = "Ruminant_2000", convert = FALSE)
 #' }
-#' @importFrom terra rast aggregate modal
+#' @importFrom terra rast aggregate modal extract
 #' @importFrom madrat toolSubtypeSelect
-#' @importFrom magclass as.magpie getYears<- getNames<-
+#' @importFrom mstools toolGetMappingCoord2Country
+#' @importFrom magclass as.magpie getYears<-
 
 readGLPS <- function(subtype = "Ch_Ext_2010") {
 
@@ -43,34 +44,34 @@ readGLPS <- function(subtype = "Ch_Ext_2010") {
     Pg_Ind_2010 = "10_PgInd_2010_Da.tif"
   )
 
-  monogastricSubtypes <- names(monogastricFiles)
-
   year <- paste0("y", substr(subtype, nchar(subtype) - 3, nchar(subtype)))
 
-  if (subtype %in% monogastricSubtypes) {
+  if (subtype %in% names(monogastricFiles)) {
     file <- toolSubtypeSelect(subtype, monogastricFiles)
-    x <- rast(file)
-    x <- aggregate(x, fact = 6, fun = sum, na.rm = TRUE)
-    x <- as.magpie(x)
-    getYears(x) <- year
-    getNames(x) <- subtype
-    attr(x, "unit") <- "heads/pixel"
-    return(x)
+    r <- rast(file)
+    r <- aggregate(r, fact = 6, fun = sum, na.rm = TRUE)
+    unit <- "heads/pixel"
+  } else if (subtype == "Ruminant_2000") {
+    gisFile <- list.files(pattern = "GlobalRuminant.*\\.(tif|img|asc)$", ignore.case = TRUE)
+    if (length(gisFile) == 0) stop("No ruminant raster file found for Ruminant_2000. Run downloadSource first.")
+    gisFile <- gisFile[1]
+    r <- rast(gisFile)
+    r <- aggregate(r, fact = 6, fun = modal, na.rm = TRUE)
+    unit <- "categorical (LPS class code)"
+  } else {
+    allSubtypes <- c(names(monogastricFiles), "Ruminant_2000")
+    stop("Unknown subtype '", subtype, "'. Available: ",
+         paste(allSubtypes, collapse = ", "))
   }
 
-  if (subtype == "Ruminant_2000") {
-    gisFile <- list.files(pattern = "\\.(tif|img|asc)$", ignore.case = TRUE)[1]
-    if (is.na(gisFile)) stop("No raster file found for Ruminant_2000. Run downloadSource first.")
-    x <- rast(gisFile)
-    x <- aggregate(x, fact = 6, fun = modal, na.rm = TRUE)
-    x <- as.magpie(x)
-    getYears(x) <- year
-    getNames(x) <- subtype
-    attr(x, "unit") <- "categorical (LPS class code)"
-    return(x)
-  }
-
-  allSubtypes <- c(monogastricSubtypes, "Ruminant_2000")
-  stop("Unknown subtype '", subtype, "'. Available: ",
-       paste(allSubtypes, collapse = ", "))
+  map <- toolGetMappingCoord2Country(pretty = TRUE)
+  x <- as.magpie(extract(r, map[c("lon", "lat")], ID = FALSE), spatial = 1)
+  dimnames(x) <- list(
+    "x.y.iso" = paste(map$coords, map$iso, sep = "."),
+    "t"        = NULL,
+    "data"     = subtype
+  )
+  getYears(x) <- year
+  attr(x, "unit") <- unit
+  return(x)
 }

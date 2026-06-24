@@ -20,15 +20,16 @@
 #'       \code{Da_Pg_2020}, \code{Da_Bf_2020}, \code{Da_Ch_2020},
 #'       \code{Da_Gt_2020}
 #'   }
-#' @return A list with dataset metadata (url, doi, title, author, version,
-#'   release_date, unit, description, license).
+#' @return A list with dataset metadata: \code{url}, \code{doi}, \code{title},
+#'   \code{author}, \code{version}, \code{release_date}, \code{unit},
+#'   \code{description}, \code{license}, and \code{reference} (2015 only).
 #' @author Bin Lin
 #' @examples
 #' \dontrun{
 #' downloadSource("GLW4", subtype = "Da_Ct_2015")
 #' downloadSource("GLW4", subtype = "Da_Ct_2020")
 #' }
-#' @importFrom utils download.file person
+#' @importFrom utils download.file person bibentry
 #' @importFrom withr local_options
 #' @importFrom madrat toolSubtypeSelect
 
@@ -110,7 +111,24 @@ downloadGLW4 <- function(subtype = "Da_Ct_2015") {
         "Units: absolute number of animals per pixel.",
         "Spatial reference: EPSG:4326 WGS84."
       ),
-      license      = "CC BY 4.0"
+      license      = "CC BY 4.0",
+      reference    = bibentry(
+        "Article",
+        title   = paste("Global distribution data for cattle, buffaloes,",
+                        "horses, sheep, goats, pigs, chickens and ducks in 2015"),
+        author  = c(
+          person("Timothy P.", "Robinson"),
+          person("G. R. William", "Wint"),
+          person("Giuseppina", "Cinardi"),
+          person("Thomas P.", "Van Boeckel"),
+          person("Sophie O.", "Vanwambeke"),
+          person("Marius", "Gilbert")
+        ),
+        year    = "2022",
+        journal = "Scientific Data",
+        doi     = "10.7910/DVN/TKGQCY",
+        url     = "https://dataverse.harvard.edu/dataverse/glw_4"
+      )
     ))
 
   } else {

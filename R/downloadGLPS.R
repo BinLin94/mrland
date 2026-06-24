@@ -32,7 +32,6 @@
 #' }
 #' @importFrom utils download.file bibentry person
 #' @importFrom withr local_options
-#' @importFrom archive archive_extract
 
 downloadGLPS <- function(subtype = "Ch_Ext_2010") {
 
@@ -136,7 +135,15 @@ downloadGLPS <- function(subtype = "Ch_Ext_2010") {
     url         <- paste0(dvBase, fileId)
 
     download.file(url, destfile = archiveFile, mode = "wb")
-    archive_extract(archiveFile)
+    if (requireNamespace("archive", quietly = TRUE)) {
+      archive::archive_extract(archiveFile)
+    } else if (nchar(Sys.which("7z")) > 0) {
+      system2("7z", c("x", archiveFile))
+    } else if (nchar(Sys.which("7za")) > 0) {
+      system2("7za", c("x", archiveFile))
+    } else {
+      stop("Cannot extract .7z file. Please install the 'archive' R package or 7z.")
+    }
     file.remove(archiveFile)
 
     return(list(

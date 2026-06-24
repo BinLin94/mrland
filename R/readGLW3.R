@@ -21,14 +21,17 @@
 #'       \item \code{Dk}: Ducks
 #'     }
 #'   }
-#' @return A gridded magpie object with gridded livestock of the world
+#' @return A magpie object with 67420 lpjcell coordinates, one year (y2010),
+#'   and gridded livestock counts in heads per 0.5-degree pixel.
 #' @author Marcos Alves, Bin Lin
+#' @seealso \code{\link{readGLW4}}, \code{\link{correctGLW3}}
 #' @examples
 #' \dontrun{
 #' readSource("GLW3", subtype = "Da_Ct_2010", convert = FALSE)
 #' }
-#' @importFrom terra rast aggregate
+#' @importFrom terra rast aggregate extract
 #' @importFrom madrat toolSubtypeSelect
+#' @importFrom mstools toolGetMappingCoord2Country
 #' @importFrom magclass as.magpie getYears<- getNames<-
 
 readGLW3 <- function(subtype = "Da_Ct_2010") {
@@ -52,11 +55,17 @@ readGLW3 <- function(subtype = "Da_Ct_2010") {
     Aw_Dk_2010 = "6_Dk_2010_Aw.tif"
   ))
 
-  x <- rast(file)
-  x <- aggregate(x, fact = 6, fun = sum, na.rm = TRUE)
-  x <- as.magpie(x)
+  r <- rast(file)
+  r <- aggregate(r, fact = 6, fun = sum, na.rm = TRUE)
+
+  map <- toolGetMappingCoord2Country(pretty = TRUE)
+  x <- as.magpie(extract(r, map[c("lon", "lat")], ID = FALSE), spatial = 1)
+  dimnames(x) <- list(
+    "x.y.iso" = paste(map$coords, map$iso, sep = "."),
+    "t"        = NULL,
+    "data"     = subtype
+  )
   getYears(x) <- "y2010"
-  getNames(x) <- subtype
   attr(x, "unit") <- "heads/pixel"
   return(x)
 }
