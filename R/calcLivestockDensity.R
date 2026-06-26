@@ -290,7 +290,9 @@ calcLivestockDensity <- function(output = "weight",
   # aggregate 8 FAO species to 5 MAgPIE kli categories
   if (category == "magpie") {
 
-    yrs <- getYears(heads)
+    yrs    <- getYears(heads)
+    astExt <- setdiff(yrs, getYears(animalStocks))
+    if (length(astExt) > 0) animalStocks <- toolHoldConstant(animalStocks, years = astExt)
     ast <- animalStocks[, yrs, ]
 
     safeFrac <- function(num, den) {
