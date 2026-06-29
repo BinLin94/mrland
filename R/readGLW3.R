@@ -30,29 +30,30 @@
 #' readSource("GLW3", subtype = "Da_Ct_2010", convert = FALSE)
 #' }
 #' @importFrom terra rast aggregate extract
-#' @importFrom madrat toolSubtypeSelect
 #' @importFrom mstools toolGetMappingCoord2Country
-#' @importFrom magclass as.magpie getYears<- getNames<-
+#' @importFrom magclass as.magpie getYears<-
 
 readGLW3 <- function(subtype = "Da_Ct_2010") {
 
   file <- toolSubtypeSelect(subtype, c(
-    Da_Ct_2010 = "5_Ct_2010_Da.tif",
-    Aw_Ct_2010 = "6_Ct_2010_Aw.tif",
-    Da_Sh_2010 = "5_Sh_2010_Da.tif",
-    Aw_Sh_2010 = "6_Sh_2010_Aw.tif",
-    Da_Pg_2010 = "5_Pg_2010_Da.tif",
-    Aw_Pg_2010 = "6_Pg_2010_Aw.tif",
-    Da_Bf_2010 = "5_Bf_2010_Da.tif",
-    Aw_Bf_2010 = "6_Bf_2010_Aw.tif",
-    Da_Ch_2010 = "5_Ch_2010_Da.tif",
-    Aw_Ch_2010 = "6_Ch_2010_Aw.tif",
-    Da_Ho_2010 = "5_Ho_2010_Da.tif",
-    Aw_Ho_2010 = "6_Ho_2010_Aw.tif",
-    Da_Gt_2010 = "5_Gt_2010_Da.tif",
-    Aw_Gt_2010 = "6_Gt_2010_Aw.tif",
-    Da_Dk_2010 = "5_Dk_2010_Da.tif",
-    Aw_Dk_2010 = "6_Dk_2010_Aw.tif"
+    Da         = "5_Ct_2010_Da.tif",
+    Aw         = "6_Ct_2010_Aw.tif",
+    Da_Ct_2010 = file.path("Da_Ct_2010", "5_Ct_2010_Da.tif"),
+    Aw_Ct_2010 = file.path("Aw_Ct_2010", "6_Ct_2010_Aw.tif"),
+    Da_Sh_2010 = file.path("Da_Sh_2010", "5_Sh_2010_Da.tif"),
+    Aw_Sh_2010 = file.path("Aw_Sh_2010", "6_Sh_2010_Aw.tif"),
+    Da_Pg_2010 = file.path("Da_Pg_2010", "5_Pg_2010_Da.tif"),
+    Aw_Pg_2010 = file.path("Aw_Pg_2010", "6_Pg_2010_Aw.tif"),
+    Da_Bf_2010 = file.path("Da_Bf_2010", "5_Bf_2010_Da.tif"),
+    Aw_Bf_2010 = file.path("Aw_Bf_2010", "6_Bf_2010_Aw.tif"),
+    Da_Ch_2010 = file.path("Da_Ch_2010", "5_Ch_2010_Da.tif"),
+    Aw_Ch_2010 = file.path("Aw_Ch_2010", "6_Ch_2010_Aw.tif"),
+    Da_Ho_2010 = file.path("Da_Ho_2010", "5_Ho_2010_Da.tif"),
+    Aw_Ho_2010 = file.path("Aw_Ho_2010", "6_Ho_2010_Aw.tif"),
+    Da_Gt_2010 = file.path("Da_Gt_2010", "5_Gt_2010_Da.tif"),
+    Aw_Gt_2010 = file.path("Aw_Gt_2010", "6_Gt_2010_Aw.tif"),
+    Da_Dk_2010 = file.path("Da_Dk_2010", "5_Dk_2010_Da.tif"),
+    Aw_Dk_2010 = file.path("Aw_Dk_2010", "6_Dk_2010_Aw.tif")
   ))
 
   r <- rast(file)
