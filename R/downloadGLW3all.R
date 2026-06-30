@@ -1,4 +1,4 @@
-#' @title downloadGLW3
+#' @title downloadGLW3all
 #' @description Downloads Gridded Livestock of the World version 3 (GLW 3)
 #'   raster data for reference year 2010 from Harvard Dataverse. Eight
 #'   livestock species are available with both dasymetric and areal weighting.
@@ -20,14 +20,14 @@
 #' @author Bin Lin
 #' @examples
 #' \dontrun{
-#' downloadSource("GLW3", subtype = "Da_Ct_2010")
-#' downloadSource("GLW3", subtype = "Aw_Sh_2010")
+#' downloadSource("GLW3all", subtype = "Da_Ct_2010")
+#' downloadSource("GLW3all", subtype = "Aw_Sh_2010")
 #' }
 #' @importFrom utils download.file bibentry person
 #' @importFrom withr local_options
 #' @importFrom madrat toolSubtypeSelect
 
-downloadGLW3 <- function(subtype = "Da_Ct_2010") {
+downloadGLW3all <- function(subtype = "Da_Ct_2010") {
 
   # ---------------------------------------------------------------------------
   # 2010 data: Harvard Dataverse, one dataset per species
@@ -76,7 +76,7 @@ downloadGLW3 <- function(subtype = "Da_Ct_2010") {
   return(list(
     url          = url,
     doi          = speciesDoi,
-    title        = "Gridded Livestock of the World \u2013 2010 (GLW 3)",
+    title        = "Gridded Livestock of the World – 2010 (GLW 3)",
     author       = person("Marius", "Gilbert"),
     version      = "2010",
     release_date = "2018",
@@ -96,7 +96,7 @@ downloadGLW3 <- function(subtype = "Da_Ct_2010") {
                       "horses, sheep, goats, pigs, chickens and ducks in 2010"),
       author  = c(
         person("Marius", "Gilbert"),
-        person("Ga\u00eblle", "Nicolas"),
+        person("Gaëlle", "Nicolas"),
         person("Giuseppina", "Cinardi"),
         person("Thomas P.", "Van Boeckel"),
         person("Sophie O.", "Vanwambeke"),

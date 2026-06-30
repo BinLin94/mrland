@@ -79,7 +79,7 @@ calcLivestockDensity <- function(output = "weight",
 
   # read GLW spatial snapshots (heads/pixel); Ho and Dk missing in GLW4 2020, fall back to 2015
   glw2010 <- mbind(lapply(speciesAll, function(sp) {
-    setNames(readSource("GLW3", subtype = paste0("Da_", sp, "_2010")), sp)
+    setNames(readSource("GLW3all", subtype = paste0("Da_", sp, "_2010")), sp)
   }))
 
   glw2015 <- mbind(lapply(speciesAll, function(sp) {
