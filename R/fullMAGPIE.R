@@ -428,10 +428,6 @@ fullMAGPIE <- function(rev = numeric_version("0.1"), dev = "") {
   calcOutput("FactorCostsLivst", round = 4, aggregate = TRUE, years = seq(1995, 2015, 5),
              outputStatistics = stats, file = "f70_hist_factor_costs_livst.cs3")
 
-  # 71 disagg livestock
-  calcOutput("LivestockDensity", years = seq(1995, 2025, 5), aggregate = FALSE, round = 4,
-             outputStatistics = stats, file = "f71_livestock_weight.mz")
-
   # 73 timber -- Always needed on iso country level so no need to aggregate
   calcOutput("EndUseTimber", aggregate = FALSE, round = 4,
              outputStatistics = stats, file = "f73_prod_specific_timber.csv")
