@@ -1,4 +1,4 @@
-#' @title calcLivestockDensity
+#' @title calcLivestockDistribution
 #' @description Calculates gridded livestock distribution by species using GLW3/GLW4
 #'   spatial snapshots (2010, 2015, 2020) linearly interpolated to requested FAO years,
 #'   with constant extrapolation beyond the anchor range. Country totals come from
@@ -42,18 +42,18 @@
 #' @author Bin Lin
 #' @examples
 #' \dontrun{
-#' calcOutput("LivestockDensity", output = "weight", aggregate = FALSE)
-#' calcOutput("LivestockDensity", output = "head",   aggregate = FALSE)
-#' calcOutput("LivestockDensity", output = "density", landProxy = "speciesSpecific",
+#' calcOutput("LivestockDistribution", output = "weight", aggregate = FALSE)
+#' calcOutput("LivestockDistribution", output = "head",   aggregate = FALSE)
+#' calcOutput("LivestockDistribution", output = "density", landProxy = "speciesSpecific",
 #'            aggregate = FALSE)
-#' calcOutput("LivestockDensity", category = "magpie", aggregate = FALSE)
+#' calcOutput("LivestockDistribution", category = "magpie", aggregate = FALSE)
 #' }
 #' @importFrom magclass mbind setNames dimSums getYears getYears<- getItems time_interpolate
 #' @importFrom magpiesets findset
 #' @importFrom madrat calcOutput readSource
 #' @importFrom mstools toolHoldConstant
 
-calcLivestockDensity <- function(output = "weight",
+calcLivestockDistribution <- function(output = "head",
                                  landProxy = "speciesSpecific",
                                  category  = "magpie",
                                  selectyears = paste0("y", 1961:2025)) {
