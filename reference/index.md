@@ -71,6 +71,8 @@
   calcIrrigationInvCosts
 - [`calcKeyBiodiversityAreas()`](calcKeyBiodiversityAreas.md) :
   calcKeyBiodiversityAreas
+- [`calcLivestockDistribution()`](calcLivestockDistribution.md) :
+  calcLivestockDistribution
 - [`calcLossShare()`](calcLossShare.md) : calcLossShare
 - [`calcMulticroppingCells()`](calcMulticroppingCells.md) :
   calcMulticroppingCells
