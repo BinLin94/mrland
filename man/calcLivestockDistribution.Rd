@@ -58,6 +58,16 @@ Calculates gridded livestock distribution by species using GLW3/GLW4
   (Bf), sheep (Sh), goats (Gt), horses (Ho), pigs (Pg), chickens (Ch), ducks (Dk).
   Horses and ducks are not available in GLW4 2020 and fall back to the 2015
   spatial distribution.
+
+  Monogastrics (Pg, Ch, Dk) fall back to total land area (all nine land classes summed)
+  for countries where GLW has zero grid signal - about 70 countries per product, mostly
+  small island states with no satellite pixel coverage. This recovers countries that
+  have any land recorded at all (e.g. WSM, TON) but not micro-states whose total land
+  area is itself ~0 at 0.5-degree resolution (e.g. KIR, TUV, NRU, NIU, COK, SYC, FSM,
+  PYF) - for those, no land-based proxy of any kind has anything to fall back to, since
+  the country doesn't register a meaningful land footprint in the underlying cellular
+  land-use data at all. This is a grid-resolution limit (like Macau having no grid cell
+  of its own), not something this function's fallback logic can resolve.
 }
 \examples{
 \dontrun{
