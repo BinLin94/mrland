@@ -5,13 +5,31 @@
   calcAnimalStocks. Eight species are covered: cattle (Ct), buffaloes
   (Bf), sheep (Sh), goats (Gt), horses (Ho), pigs (Pg), chickens (Ch), ducks (Dk).
   Horses and ducks are not available in GLW4 2020 and fall back to the 2015
-  spatial distribution."><meta property="og:description" content="Calculates gridded livestock distribution by species using GLW3/GLW4
+  spatial distribution.
+Monogastrics (Pg, Ch, Dk) fall back to total land area (all nine land classes summed)
+  for countries where GLW has zero grid signal - about 70 countries per product, mostly
+  small island states with no satellite pixel coverage. This recovers countries that
+  have any land recorded at all (e.g. WSM, TON) but not micro-states whose total land
+  area is itself ~0 at 0.5-degree resolution (e.g. KIR, TUV, NRU, NIU, COK, SYC, FSM,
+  PYF) - for those, no land-based proxy of any kind has anything to fall back to, since
+  the country doesn't register a meaningful land footprint in the underlying cellular
+  land-use data at all. This is a grid-resolution limit (like Macau having no grid cell
+  of its own), not something this function's fallback logic can resolve."><meta property="og:description" content="Calculates gridded livestock distribution by species using GLW3/GLW4
   spatial snapshots (2010, 2015, 2020) linearly interpolated to requested FAO years,
   with constant extrapolation beyond the anchor range. Country totals come from
   calcAnimalStocks. Eight species are covered: cattle (Ct), buffaloes
   (Bf), sheep (Sh), goats (Gt), horses (Ho), pigs (Pg), chickens (Ch), ducks (Dk).
   Horses and ducks are not available in GLW4 2020 and fall back to the 2015
-  spatial distribution."></head><body>
+  spatial distribution.
+Monogastrics (Pg, Ch, Dk) fall back to total land area (all nine land classes summed)
+  for countries where GLW has zero grid signal - about 70 countries per product, mostly
+  small island states with no satellite pixel coverage. This recovers countries that
+  have any land recorded at all (e.g. WSM, TON) but not micro-states whose total land
+  area is itself ~0 at 0.5-degree resolution (e.g. KIR, TUV, NRU, NIU, COK, SYC, FSM,
+  PYF) - for those, no land-based proxy of any kind has anything to fall back to, since
+  the country doesn't register a meaningful land footprint in the underlying cellular
+  land-use data at all. This is a grid-resolution limit (like Macau having no grid cell
+  of its own), not something this function's fallback logic can resolve."></head><body>
     <a href="#container" class="visually-hidden-focusable">Skip to content</a>
 
 
@@ -52,6 +70,15 @@
   (Bf), sheep (Sh), goats (Gt), horses (Ho), pigs (Pg), chickens (Ch), ducks (Dk).
   Horses and ducks are not available in GLW4 2020 and fall back to the 2015
   spatial distribution.</p>
+<p>Monogastrics (Pg, Ch, Dk) fall back to total land area (all nine land classes summed)
+  for countries where GLW has zero grid signal - about 70 countries per product, mostly
+  small island states with no satellite pixel coverage. This recovers countries that
+  have any land recorded at all (e.g. WSM, TON) but not micro-states whose total land
+  area is itself ~0 at 0.5-degree resolution (e.g. KIR, TUV, NRU, NIU, COK, SYC, FSM,
+  PYF) - for those, no land-based proxy of any kind has anything to fall back to, since
+  the country doesn't register a meaningful land footprint in the underlying cellular
+  land-use data at all. This is a grid-resolution limit (like Macau having no grid cell
+  of its own), not something this function's fallback logic can resolve.</p>
     </div>
 
     <div class="section level2">
