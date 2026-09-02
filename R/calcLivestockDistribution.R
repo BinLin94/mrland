@@ -264,15 +264,11 @@ calcLivestockDistribution <- function(output = "head",
                                 integrate_interpolated_years = FALSE,
                                 extrapolation_type           = "constant")
 
-  # land-adjusted ruminants (Step 3): compute a land-proxy density at each real GLW
-  # anchor year (2010/2015/2020), each paired with that SAME year's land proxy area,
-  # then interpolate the density itself over time (same scheme as glwInterp above) so
-  # the density exactly reproduces GLW at every anchor and only drifts from it in
-  # proportion to how much the land proxy itself has changed by other years. Computing
-  # density from a single frozen reference year, or from total land area instead of the
-  # proxy, breaks this identity and distorts GLW's own signal even in years/countries
-  # where GLW is fully informative (e.g. FRA/DEU cell shares would shift by 1-2pp for
-  # no land-use reason - see dev notes).
+  # land-adjusted ruminants: compute a land-proxy density at each real GLW anchor year
+  # (2010/2015/2020), paired with that same year's land proxy area, then interpolate the
+  # density itself over time (same scheme as glwInterp above) so it exactly reproduces
+  # GLW at every anchor and only drifts from it in proportion to how the land proxy
+  # itself changes in other years.
   if (landProxy != "glw") {
     anchorYrs      <- c(2010, 2015, 2020)
     densityAnchors <- mbind(lapply(anchorYrs, function(ay) {
@@ -397,12 +393,9 @@ calcLivestockDistribution <- function(output = "head",
     unit <- "Million animals per Mha"
   }
 
-  # round to a sane file-size precision (full/unrounded output is false precision and
-  # bloats the file), but add a tiny epsilon first so genuinely non-zero cells never
-  # round down to a literal stored zero - round = 4 previously did exactly that and
-  # wiped out 47 countries' worth of small-but-real signal (see git history). This runs
-  # after all the fallback/normalisation logic above, so it does not affect any of the
-  # country-sum-is-zero checks that logic relies on.
+  # round to a sane file-size precision, with a tiny epsilon first so genuinely non-zero
+  # cells never round down to a literal stored zero; runs after all the fallback/
+  # normalisation logic above, so it doesn't affect any of the country-sum-is-zero checks.
   out <- round(out + 1e-6, 6)
 
   return(list(
