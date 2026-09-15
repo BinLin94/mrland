@@ -393,10 +393,15 @@ calcLivestockDistribution <- function(output = "head",
     unit <- "Million animals per Mha"
   }
 
-  # round to a sane file-size precision, with a tiny epsilon first so genuinely non-zero
-  # cells never round down to a literal stored zero; runs after all the fallback/
-  # normalisation logic above, so it doesn't affect any of the country-sum-is-zero checks.
+  # round to a sane file-size precision, with a tiny epsilon so genuinely non-zero cells
+  # never round down to a literal stored zero. Only cells that are actually non-zero are
+  # bumped - genuine zeros stay zero, so empty areas (e.g. the entire Arctic) are not
+  # seeded with a spurious 1e-6 weight that a region-level GLW disaggregation would then
+  # smear livestock into. Runs after all fallback/normalisation logic above, so it doesn't
+  # affect any of the country-sum-is-zero checks.
+  zeroCells <- out == 0
   out <- round(out + 1e-6, 6)
+  out[zeroCells] <- 0
 
   return(list(
     x            = out,
