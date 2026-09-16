@@ -1,6 +1,6 @@
 # MadRaT land data package
 
-R package **mrland**, version **0.76.0**
+R package **mrland**, version **0.77.0**
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3822083.svg)](https://doi.org/10.5281/zenodo.3822083)
 [![R build
@@ -52,7 +52,7 @@ Dietrich J, Mishra A, Weindl I, Bodirsky B, Wang X, Baumstark L,
 Kreidenweis U, Klein D, Steinmetz N, Chen D, Humpenoeder F, von Jeetze
 P, Wirth S, Beier F, Hoetten D, Sauer P, Tommey J (2026). “mrland:
 MadRaT land data package.” <doi:10.5281/zenodo.3822083>
-<https://doi.org/10.5281/zenodo.3822083>, Version: 0.76.0,
+<https://doi.org/10.5281/zenodo.3822083>, Version: 0.77.0,
 <https://github.com/pik-piam/mrland>.
 
 A BibTeX entry for LaTeX users is
@@ -65,6 +65,6 @@ A BibTeX entry for LaTeX users is
  date = {2026-09-16},
  year = {2026},
  url = {https://github.com/pik-piam/mrland},
- note = {Version: 0.76.0},
+ note = {Version: 0.77.0},
 }
 ```

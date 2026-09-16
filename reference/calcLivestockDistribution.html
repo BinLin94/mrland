@@ -37,7 +37,7 @@ Monogastrics (Pg, Ch, Dk) fall back to total land area (all nine land classes su
 
     <a class="navbar-brand me-2" href="../index.html">mrland</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.76.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.77.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -66,7 +66,7 @@ Monogastrics (Pg, Ch, Dk) fall back to total land area (all nine land classes su
     <p>Calculates gridded livestock distribution by species using GLW3/GLW4
   spatial snapshots (2010, 2015, 2020) linearly interpolated to requested FAO years,
   with constant extrapolation beyond the anchor range. Country totals come from
-  <code>calcAnimalStocks</code>. Eight species are covered: cattle (Ct), buffaloes
+  <code><a href="https://rdrr.io/pkg/mrcommons/man/calcAnimalStocks.html" class="external-link">calcAnimalStocks</a></code>. Eight species are covered: cattle (Ct), buffaloes
   (Bf), sheep (Sh), goats (Gt), horses (Ho), pigs (Pg), chickens (Ch), ducks (Dk).
   Horses and ducks are not available in GLW4 2020 and fall back to the 2015
   spatial distribution.</p>
@@ -122,7 +122,7 @@ Monogastrics always use fixed GLW spatial shares regardless of this setting:</p>
 <li><p><code>"magpie"</code>: five MAgPIE livestock categories
     (livst_rum, livst_milk, livst_pig, livst_chick, livst_egg). FAO species are computed
     first and then aggregated using national dairy/broiler fractions from
-    <code>calcAnimalStocks</code>.</p></li>
+    <code><a href="https://rdrr.io/pkg/mrcommons/man/calcAnimalStocks.html" class="external-link">calcAnimalStocks</a></code>.</p></li>
 </ul></dd>
 
 
