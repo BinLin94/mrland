@@ -2,7 +2,7 @@
 #' @description Calculates gridded livestock distribution by species using GLW3/GLW4
 #'   spatial snapshots (2010, 2015, 2020) linearly interpolated to requested FAO years,
 #'   with constant extrapolation beyond the anchor range. Country totals come from
-#'   \code{\link{calcAnimalStocks}}. Eight species are covered: cattle (Ct), buffaloes
+#'   \code{\link[mrcommons]{calcAnimalStocks}}. Eight species are covered: cattle (Ct), buffaloes
 #'   (Bf), sheep (Sh), goats (Gt), horses (Ho), pigs (Pg), chickens (Ch), ducks (Dk).
 #'   Horses and ducks are not available in GLW4 2020 and fall back to the 2015
 #'   spatial distribution.
@@ -43,7 +43,7 @@
 #'     \item \code{"magpie"}: five MAgPIE livestock categories
 #'       (livst_rum, livst_milk, livst_pig, livst_chick, livst_egg). FAO species are computed
 #'       first and then aggregated using national dairy/broiler fractions from
-#'       \code{\link{calcAnimalStocks}}.
+#'       \code{\link[mrcommons]{calcAnimalStocks}}.
 #'   }
 #' @param selectyears Years to compute. Intersected with available FAO years.
 #' @return A list with elements: \code{x} (magpie object at lpjcell resolution,
