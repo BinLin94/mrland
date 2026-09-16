@@ -31,8 +31,9 @@ downloadGLW4(subtype = "Da_Ct_2015")
 
 ## Value
 
-A list with dataset metadata (url, doi, title, author, version,
-release_date, unit, description, license).
+A list with dataset metadata: `url`, `doi`, `title`, `author`,
+`version`, `release_date`, `unit`, `description`, `license`, and
+`reference` (2015 only).
 
 ## Author
 

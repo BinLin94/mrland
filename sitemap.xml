@@ -80,10 +80,10 @@
 <url><loc>/reference/calcTradeBilateralFAOHarmonized.html</loc></url>
 <url><loc>/reference/calcTradeBilateralScenarioAdj.html</loc></url>
 <url><loc>/reference/calcTradeExportShr.html</loc></url>
+<url><loc>/reference/calcTradeFlexBandHelper.html</loc></url>
 <url><loc>/reference/calcTradeImportSupplyRatio.html</loc></url>
 <url><loc>/reference/calcTradeMargin.html</loc></url>
 <url><loc>/reference/calcTradeSelfSuff.html</loc></url>
-<url><loc>/reference/calcTradeStdDevHelper.html</loc></url>
 <url><loc>/reference/calcTradeTariff.html</loc></url>
 <url><loc>/reference/calcUrbanLandFuture.html</loc></url>
 <url><loc>/reference/calcValueProduction.html</loc></url>
@@ -91,6 +91,7 @@
 <url><loc>/reference/calcYieldsCalibrated.html</loc></url>
 <url><loc>/reference/calcYieldsLPJmL.html</loc></url>
 <url><loc>/reference/calcYieldsWeight.html</loc></url>
+<url><loc>/reference/calcYldPastSwitch.html</loc></url>
 <url><loc>/reference/convertAQUASTAT.html</loc></url>
 <url><loc>/reference/convertEATLancet.html</loc></url>
 <url><loc>/reference/convertFAOLossesWaste.html</loc></url>
@@ -107,6 +108,7 @@
 <url><loc>/reference/correctDinerstein2020.html</loc></url>
 <url><loc>/reference/correctGLPS.html</loc></url>
 <url><loc>/reference/correctGLW3.html</loc></url>
+<url><loc>/reference/correctGLW3all.html</loc></url>
 <url><loc>/reference/correctGLW4.html</loc></url>
 <url><loc>/reference/correctHalfEarth.html</loc></url>
 <url><loc>/reference/correctKeyBiodiversityAreas.html</loc></url>
@@ -119,7 +121,7 @@
 <url><loc>/reference/correctS4Nproject_input.html</loc></url>
 <url><loc>/reference/correctZabel2014.html</loc></url>
 <url><loc>/reference/downloadGLPS.html</loc></url>
-<url><loc>/reference/downloadGLW3.html</loc></url>
+<url><loc>/reference/downloadGLW3all.html</loc></url>
 <url><loc>/reference/downloadGLW4.html</loc></url>
 <url><loc>/reference/downloadH08vapotranspiration.html</loc></url>
 <url><loc>/reference/downloadSPAM.html</loc></url>
@@ -138,6 +140,7 @@
 <url><loc>/reference/readForestryProductionRatio.html</loc></url>
 <url><loc>/reference/readGLPS.html</loc></url>
 <url><loc>/reference/readGLW3.html</loc></url>
+<url><loc>/reference/readGLW3all.html</loc></url>
 <url><loc>/reference/readGLW4.html</loc></url>
 <url><loc>/reference/readGTAP.html</loc></url>
 <url><loc>/reference/readH08evapotranspiration.html</loc></url>

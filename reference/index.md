@@ -124,12 +124,12 @@
 - [`calcTradeBilateralScenarioAdj()`](calcTradeBilateralScenarioAdj.md)
   : calcTradeBilateralScenarioAdj
 - [`calcTradeExportShr()`](calcTradeExportShr.md) : calcTradeExportShr
+- [`calcTradeFlexBandHelper()`](calcTradeFlexBandHelper.md) :
+  calcTradeFlexBandHelper
 - [`calcTradeImportSupplyRatio()`](calcTradeImportSupplyRatio.md) :
   calcTradeImportSupplyRatio
 - [`calcTradeMargin()`](calcTradeMargin.md) : calcTradeMargin
 - [`calcTradeSelfSuff()`](calcTradeSelfSuff.md) : calcTradeSelfSuff
-- [`calcTradeStdDevHelper()`](calcTradeStdDevHelper.md) :
-  calcTradeStdDevHelper
 - [`calcTradeTariff()`](calcTradeTariff.md) : calcTradeTariff
 - [`calcUrbanLandFuture()`](calcUrbanLandFuture.md) :
   calcUrbanLandFuture
@@ -140,6 +140,7 @@
   calcYieldsCalibrated
 - [`calcYieldsLPJmL()`](calcYieldsLPJmL.md) : calcYieldsLPJmL
 - [`calcYieldsWeight()`](calcYieldsWeight.md) : calcYieldsWeight
+- [`calcYldPastSwitch()`](calcYldPastSwitch.md) : calcYldPastSwitch
 - [`convertAQUASTAT()`](convertAQUASTAT.md) : convertAQUASTAT
 - [`convertEATLancet()`](convertEATLancet.md) : convertEATLancet
 - [`convertFAOLossesWaste()`](convertFAOLossesWaste.md) : Convert data
@@ -167,6 +168,7 @@
   correctDinerstein2020
 - [`correctGLPS()`](correctGLPS.md) : correctGLPS
 - [`correctGLW3()`](correctGLW3.md) : correctGLW3
+- [`correctGLW3all()`](correctGLW3all.md) : correctGLW3all
 - [`correctGLW4()`](correctGLW4.md) : correctGLW4
 - [`correctHalfEarth()`](correctHalfEarth.md) : correctHalfEarth
 - [`correctKeyBiodiversityAreas()`](correctKeyBiodiversityAreas.md) :
@@ -184,7 +186,7 @@
   correctS4Nproject_input
 - [`correctZabel2014()`](correctZabel2014.md) : correctZabel2014
 - [`downloadGLPS()`](downloadGLPS.md) : downloadGLPS
-- [`downloadGLW3()`](downloadGLW3.md) : downloadGLW3
+- [`downloadGLW3all()`](downloadGLW3all.md) : downloadGLW3all
 - [`downloadGLW4()`](downloadGLW4.md) : downloadGLW4
 - [`downloadH08vapotranspiration()`](downloadH08vapotranspiration.md) :
   downloadH08evapotranspiration
@@ -207,6 +209,7 @@
   Read Forestry Production Ratio
 - [`readGLPS()`](readGLPS.md) : readGLPS
 - [`readGLW3()`](readGLW3.md) : readGLW3
+- [`readGLW3all()`](readGLW3all.md) : readGLW3all
 - [`readGLW4()`](readGLW4.md) : readGLW4
 - [`readGTAP()`](readGTAP.md) : readGTAP
 - [`readH08evapotranspiration()`](readH08evapotranspiration.md) :

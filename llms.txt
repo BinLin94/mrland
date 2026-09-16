@@ -1,6 +1,6 @@
 # MadRaT land data package
 
-R package **mrland**, version **0.73.0**
+R package **mrland**, version **0.76.0**
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3822083.svg)](https://doi.org/10.5281/zenodo.3822083)
 [![R build
@@ -52,7 +52,7 @@ Dietrich J, Mishra A, Weindl I, Bodirsky B, Wang X, Baumstark L,
 Kreidenweis U, Klein D, Steinmetz N, Chen D, Humpenoeder F, von Jeetze
 P, Wirth S, Beier F, Hoetten D, Sauer P, Tommey J (2026). “mrland:
 MadRaT land data package.” <doi:10.5281/zenodo.3822083>
-<https://doi.org/10.5281/zenodo.3822083>, Version: 0.73.0,
+<https://doi.org/10.5281/zenodo.3822083>, Version: 0.76.0,
 <https://github.com/pik-piam/mrland>.
 
 A BibTeX entry for LaTeX users is
@@ -62,10 +62,10 @@ A BibTeX entry for LaTeX users is
  title = {mrland: MadRaT land data package},
  author = {Jan Philipp Dietrich and Abhijeet Mishra and Isabelle Weindl and Benjamin Leon Bodirsky and Xiaoxi Wang and Lavinia Baumstark and Ulrich Kreidenweis and David Klein and Nele Steinmetz and David Chen and Florian Humpenoeder and Patrick {von Jeetze} and Stephen Wirth and Felicitas Beier and David Hoetten and Pascal Sauer and Jake Tommey},
  doi = {10.5281/zenodo.3822083},
- date = {2026-05-29},
+ date = {2026-09-16},
  year = {2026},
  url = {https://github.com/pik-piam/mrland},
- note = {Version: 0.73.0},
+ note = {Version: 0.76.0},
 }
 ```
 
@@ -195,12 +195,12 @@ A BibTeX entry for LaTeX users is
 - [`calcTradeBilateralScenarioAdj()`](calcTradeBilateralScenarioAdj.md)
   : calcTradeBilateralScenarioAdj
 - [`calcTradeExportShr()`](calcTradeExportShr.md) : calcTradeExportShr
+- [`calcTradeFlexBandHelper()`](calcTradeFlexBandHelper.md) :
+  calcTradeFlexBandHelper
 - [`calcTradeImportSupplyRatio()`](calcTradeImportSupplyRatio.md) :
   calcTradeImportSupplyRatio
 - [`calcTradeMargin()`](calcTradeMargin.md) : calcTradeMargin
 - [`calcTradeSelfSuff()`](calcTradeSelfSuff.md) : calcTradeSelfSuff
-- [`calcTradeStdDevHelper()`](calcTradeStdDevHelper.md) :
-  calcTradeStdDevHelper
 - [`calcTradeTariff()`](calcTradeTariff.md) : calcTradeTariff
 - [`calcUrbanLandFuture()`](calcUrbanLandFuture.md) :
   calcUrbanLandFuture
@@ -211,6 +211,7 @@ A BibTeX entry for LaTeX users is
   calcYieldsCalibrated
 - [`calcYieldsLPJmL()`](calcYieldsLPJmL.md) : calcYieldsLPJmL
 - [`calcYieldsWeight()`](calcYieldsWeight.md) : calcYieldsWeight
+- [`calcYldPastSwitch()`](calcYldPastSwitch.md) : calcYldPastSwitch
 - [`convertAQUASTAT()`](convertAQUASTAT.md) : convertAQUASTAT
 - [`convertEATLancet()`](convertEATLancet.md) : convertEATLancet
 - [`convertFAOLossesWaste()`](convertFAOLossesWaste.md) : Convert data
@@ -238,6 +239,7 @@ A BibTeX entry for LaTeX users is
   correctDinerstein2020
 - [`correctGLPS()`](correctGLPS.md) : correctGLPS
 - [`correctGLW3()`](correctGLW3.md) : correctGLW3
+- [`correctGLW3all()`](correctGLW3all.md) : correctGLW3all
 - [`correctGLW4()`](correctGLW4.md) : correctGLW4
 - [`correctHalfEarth()`](correctHalfEarth.md) : correctHalfEarth
 - [`correctKeyBiodiversityAreas()`](correctKeyBiodiversityAreas.md) :
@@ -255,7 +257,7 @@ A BibTeX entry for LaTeX users is
   correctS4Nproject_input
 - [`correctZabel2014()`](correctZabel2014.md) : correctZabel2014
 - [`downloadGLPS()`](downloadGLPS.md) : downloadGLPS
-- [`downloadGLW3()`](downloadGLW3.md) : downloadGLW3
+- [`downloadGLW3all()`](downloadGLW3all.md) : downloadGLW3all
 - [`downloadGLW4()`](downloadGLW4.md) : downloadGLW4
 - [`downloadH08vapotranspiration()`](downloadH08vapotranspiration.md) :
   downloadH08evapotranspiration
@@ -278,6 +280,7 @@ A BibTeX entry for LaTeX users is
   Read Forestry Production Ratio
 - [`readGLPS()`](readGLPS.md) : readGLPS
 - [`readGLW3()`](readGLW3.md) : readGLW3
+- [`readGLW3all()`](readGLW3all.md) : readGLW3all
 - [`readGLW4()`](readGLW4.md) : readGLW4
 - [`readGTAP()`](readGTAP.md) : readGTAP
 - [`readH08evapotranspiration()`](readH08evapotranspiration.md) :

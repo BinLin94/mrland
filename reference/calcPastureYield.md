@@ -28,7 +28,7 @@ Pasture yields and corresponding weights as a list of two MAgPIE objects
 
 ## Author
 
-Isabelle Weindl, Marcos Alves
+Isabelle Weindl, Marcos Alves, Bin Lin
 
 ## Examples
 

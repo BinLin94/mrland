@@ -1,7 +1,6 @@
 # correctGLW3
 
-Replaces NA values and any negative artefacts with zero in GLW 3 gridded
-livestock rasters (reference year 2010).
+Read GLW3 file
 
 ## Usage
 
@@ -17,7 +16,8 @@ correctGLW3(x)
 
 ## Value
 
-Magpie object with NA and negative values replaced by 0.
+Magpie objects with results on cellular level, weight, unit and
+description.
 
 ## See also
 
@@ -25,12 +25,12 @@ Magpie object with NA and negative values replaced by 0.
 
 ## Author
 
-Marcos Alves, Bin Lin
+Marcos Alves
 
 ## Examples
 
 ``` r
 if (FALSE) { # \dontrun{
-  readSource("GLW3", subtype = "Da_Ct_2010", convert = "onlycorrect")
+  readSource("GLW3", subtype = "DA", convert="onlycorrect")
 } # }
 ```
