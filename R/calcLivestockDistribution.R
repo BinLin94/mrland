@@ -125,6 +125,7 @@ calcLivestockDistribution <- function(output = "head",
     setNames(animalStocks[, , "ducks"],                                                 "Dk")
   )
   faoStocks[is.na(faoStocks) | faoStocks < 0] <- 0
+  faoStocks[faoStocks == 0] <- 1e-6 # 1 animal
 
   availYears <- getYears(faoStocks)
   beyondFAO  <- selectyears[selectyears > max(availYears)]
