@@ -45,7 +45,6 @@ calcPastureYield <- function(range_pastr = FALSE) { # nolint
     grasslShares[is.nan(grasslShares) | is.infinite(grasslShares)] <- 0
 
     # cellular livestock data
-    # livestock      <- setNames(readSource("GLW3"), "liv_numb")  # implicit default subtype "Da"
     livestock      <- setNames(readSource("GLW3all", subtype = "Da_Ct_2010"), "liv_numb")
     livstSplit     <- livestock * grasslShares
     livstSplit     <- collapseNames(livstSplit)

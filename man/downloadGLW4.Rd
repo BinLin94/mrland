@@ -23,8 +23,9 @@ options:
 }}
 }
 \value{
-A list with dataset metadata (url, doi, title, author, version,
-  release_date, unit, description, license).
+A list with dataset metadata: \code{url}, \code{doi}, \code{title},
+  \code{author}, \code{version}, \code{release_date}, \code{unit},
+  \code{description}, \code{license}, and \code{reference} (2015 only).
 }
 \description{
 Downloads Gridded Livestock of the World version 4 (GLW 4)

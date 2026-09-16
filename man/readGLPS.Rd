@@ -19,8 +19,8 @@ options:
 }}
 }
 \value{
-A gridded magpie object. Monogastric subtypes: heads/pixel.
-  Ruminant_2000: categorical LPS class code per pixel.
+A magpie object with 67420 lpjcell coordinates. Monogastric subtypes:
+  heads/pixel. Ruminant_2000: categorical LPS class code per pixel.
 }
 \description{
 Reads Global Livestock Production System (GLPS) data.

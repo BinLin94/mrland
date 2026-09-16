@@ -4,42 +4,23 @@
 \alias{readGLW3}
 \title{readGLW3}
 \usage{
-readGLW3(subtype = "Da_Ct_2010")
+readGLW3(subtype = "Da")
 }
 \arguments{
-\item{subtype}{Weighting method, livestock species, and reference year
-(\code{"<method>_<species>_2010"}):
-\itemize{
-  \item {Da}: Dasymetric weighting informed by Random Forest
-  \item {Aw}: Areal weighting (distributed uniformly in each census unit)
-  \itemize{
-    \item \code{Ct}: Cattle
-    \item \code{Sh}: Sheep
-    \item \code{Pg}: Pigs
-    \item \code{Bf}: Buffaloes
-    \item \code{Ch}: Chickens
-    \item \code{Ho}: Horses
-    \item \code{Gt}: Goats
-    \item \code{Dk}: Ducks
-  }
-}}
+\item{subtype}{Subtype of file to be opened (either Da or Aw)}
 }
 \value{
-A gridded magpie object with gridded livestock of the world
+Magpie objects
 }
 \description{
-Reads Gridded Livestock of the World version 3 (GLW 3)
-  raster data for reference year 2010, downloaded from Harvard Dataverse.
-  Eight livestock species are available with both dasymetric and areal
-  weighting.
-  Source catalogue:
-  https://www.fao.org/livestock-systems/global-distributions/en/
+Read the gridded livestock of the world 3 dataset.
 }
 \examples{
 \dontrun{
-readSource("GLW3", subtype = "Da_Ct_2010", convert = FALSE)
+readSource("GLW3", subtype = "DA", convert = "onlycorrect")
 }
+
 }
 \author{
-Marcos Alves, Bin Lin
+Marcos Alves
 }

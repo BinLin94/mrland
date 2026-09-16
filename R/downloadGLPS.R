@@ -41,7 +41,7 @@ downloadGLPS <- function(subtype = "Ch_Ext_2010") {
   # Chicken and pig production system densities (dasymetric, heads/pixel)
   # Both species share the same Dataverse dataset: doi:10.7910/DVN/A7GQXG
   # Ch: backyard (extensive) vs. intensive management
-  # Pg: backyard (extensive) / semi-intensive / industrial
+  # Pg: backyard extensive vs. semi-intensive vs. industrial
   # ---------------------------------------------------------------------------
   monogastric <- list(
     Ch_Ext_2010 = c("06_ChExt_2010_Da.tif", "3226189"),

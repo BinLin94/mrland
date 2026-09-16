@@ -76,7 +76,7 @@ downloadGLW3all <- function(subtype = "Da_Ct_2010") {
   return(list(
     url          = url,
     doi          = speciesDoi,
-    title        = "Gridded Livestock of the World – 2010 (GLW 3)",
+    title        = "Gridded Livestock of the World - 2010 (GLW 3)",
     author       = person("Marius", "Gilbert"),
     version      = "2010",
     release_date = "2018",
@@ -96,7 +96,7 @@ downloadGLW3all <- function(subtype = "Da_Ct_2010") {
                       "horses, sheep, goats, pigs, chickens and ducks in 2010"),
       author  = c(
         person("Marius", "Gilbert"),
-        person("Gaëlle", "Nicolas"),
+        person("Ga\u00eblle", "Nicolas"),
         person("Giuseppina", "Cinardi"),
         person("Thomas P.", "Van Boeckel"),
         person("Sophie O.", "Vanwambeke"),
