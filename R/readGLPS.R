@@ -29,7 +29,7 @@
 #' readSource("GLPS", subtype = "Ch_Ext_2010", convert = FALSE)
 #' readSource("GLPS", subtype = "Ruminant_2000", convert = FALSE)
 #' }
-#' @importFrom terra rast aggregate modal extract
+#' @importFrom terra rast aggregate extract
 #' @importFrom madrat toolSubtypeSelect
 #' @importFrom mstools toolGetMappingCoord2Country
 #' @importFrom magclass as.magpie getYears<-
@@ -52,11 +52,13 @@ readGLPS <- function(subtype = "Ch_Ext_2010") {
     r <- aggregate(r, fact = 6, fun = sum, na.rm = TRUE)
     unit <- "heads/pixel"
   } else if (subtype == "Ruminant_2000") {
-    gisFile <- list.files(pattern = "GlobalRuminant.*\\.(tif|img|asc)$", ignore.case = TRUE)
+    gisFile <- list.files(pattern = "^glps.*\\.(tif|img|asc)$", ignore.case = TRUE)
     if (length(gisFile) == 0) stop("No ruminant raster file found for Ruminant_2000. Run downloadSource first.")
     gisFile <- gisFile[1]
     r <- rast(gisFile)
-    r <- aggregate(r, fact = 6, fun = modal, na.rm = TRUE)
+    levels(r) <- NULL  # class codes, not labels
+    r <- aggregate(r, fact = 6, fun = "modal", na.rm = TRUE)  # string: the generic needs a SpatRaster
+    r[is.nan(r)] <- NA  # all-NA blocks
     unit <- "categorical (LPS class code)"
   } else {
     allSubtypes <- c(names(monogastricFiles), "Ruminant_2000")

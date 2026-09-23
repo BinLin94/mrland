@@ -47,6 +47,7 @@ calcPastureYield <- function(range_pastr = FALSE) { # nolint
     # cellular livestock data
     livestock      <- setNames(readSource("GLW3all", subtype = "Da_Ct_2010"), "liv_numb")
     livstSplit     <- livestock * grasslShares
+    getYears(livstSplit) <- getYears(grasslShares)  # livestock is y2010 only
     livstSplit     <- collapseNames(livstSplit)
 
     # aggregate to country-level
