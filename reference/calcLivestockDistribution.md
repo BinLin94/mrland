@@ -27,7 +27,7 @@ something this function's fallback logic can resolve.
 ``` r
 calcLivestockDistribution(
   output = "head",
-  landProxy = "speciesSpecific",
+  landProxy = "glw",
   category = "magpie",
   selectyears = paste0("y", 1961:2025)
 )
@@ -56,8 +56,8 @@ calcLivestockDistribution(
   Monogastrics always use fixed GLW spatial shares regardless of this
   setting:
 
-  - `"glw"`: all categories use fixed GLW spatial shares; no land data
-    used.
+  - `"glw"` (default): all categories use fixed GLW spatial shares; no
+    land data used.
 
   - `"pastRange"`: ruminants (Ct, Bf, Sh, Gt, Ho) scaled by combined
     managed pasture and rangeland (`past + range`).
@@ -70,12 +70,12 @@ calcLivestockDistribution(
 
   Livestock category classification for output:
 
-  - `"FAO"` (default): eight FAO/GLW species (Ct, Bf, Sh, Gt, Ho, Pg,
-    Ch, Dk).
+  - `"FAO"`: eight FAO/GLW species (Ct, Bf, Sh, Gt, Ho, Pg, Ch, Dk).
 
-  - `"magpie"`: five MAgPIE livestock categories (livst_rum, livst_milk,
-    livst_pig, livst_chick, livst_egg). FAO species are computed first
-    and then aggregated using national dairy/broiler fractions from
+  - `"magpie"` (default): five MAgPIE livestock categories (livst_rum,
+    livst_milk, livst_pig, livst_chick, livst_egg). FAO species are
+    computed first and then aggregated using national dairy/broiler
+    fractions from
     [`calcAnimalStocks`](https://rdrr.io/pkg/mrcommons/man/calcAnimalStocks.html).
 
 - selectyears:
