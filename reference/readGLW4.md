@@ -22,7 +22,7 @@ readGLW4(subtype = "Da_Ct_2015")
 
   - Da: Dasymetric weighting informed by Random Forest
 
-  - Aw: Areal weighting – 2015 only
+  - Aw: Areal weighting - 2015 only
 
     - `Ch`: Chicken
 
