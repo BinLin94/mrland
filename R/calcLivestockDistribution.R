@@ -150,7 +150,18 @@ calcLivestockDistribution <- function(output = "head",
     setNames(animalStocks[, , "turkey"],                                             "Tk")
   )
   faoStocks[is.na(faoStocks) | faoStocks < 0] <- 0
-  faoStocks[faoStocks == 0] <- 1e-6 # 1 animal
+
+  # a species FAO reports no stock for but GLW maps in that country (any map year) is set
+  # to one animal, so that weights built from this distribution are not zero for the whole
+  # country; without GLW evidence, and for proxySpecies, it stays 0
+  glwCtry <- dimSums(glw, dim = c("x", "y"))
+  floorSpecies <- setdiff(getItems(faoStocks, dim = 3), names(proxySpecies))
+  faoStocks[, , floorSpecies] <- mbind(lapply(floorSpecies, function(sp) {
+    x      <- faoStocks[, , sp]
+    mapped <- where(dimSums(glwCtry[, , sp], dim = 2) > 0)$true$regions
+    x[mapped, , ][x[mapped, , ] == 0] <- 1e-6
+    x
+  }))
 
   # expandToGrid() fills the grid template by position, so the stocks have to hold the same
   # species in the same order as the GLW maps; otherwise every species would silently be
